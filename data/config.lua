@@ -18,68 +18,86 @@ config.useEvent = true -- whether or not to tie into the PMA voice event handler
 
 config.chestAnim = { -- Chest Animation
     enable = true, -- enable the chest radio animation
-    drawable = 9, -- the drawable (clothing type) for the chest radio animation
-    male = {
-       variations = { -- the clothing variations for the chest radio animation for male
-            1
-       },
-       textures = { -- the texture id's of the drawable for male clothing. 
-            0
-       }
-    },
-    female = {
-        variations = { -- the clothing variations for the chest radio animation for female
-            1
+    drawables = {
+        {
+            drawable = 9, -- Drawable ID
+            male = {
+                variations = {1}, -- Clothing Variations (one number back in Vmenu ie. 2 = 1)
+                textures = {
+                    {0}, -- Clothing Variation texture IDs
+                }
+            },
+            female = {
+                variations = {1},
+                textures = {
+                    {0},
+                }
+            }
         },
-        textures = { -- the texture id's of the drawable for female clothing.
-            0
-        }
     },
     emote = "radiochest" -- Emote to play
 }
 
 config.shoulderAnim = { -- Shoulder Animation
     enable = true, -- enable the shoulder radio animation
-    drawable = 9, -- the drawable (clothing type) for the shoulder radio animation
-    male = {
-        variations = { -- the clothing variations for the chest radio animation for male
-            2
+    drawables = {
+        {
+            drawable = 9, -- Drawable ID
+            male = {
+                variations = {2}, -- Clothing Variations
+                textures = {
+                    {0}, -- Clothing Variation texture IDs
+                }
+            },
+            female = {
+                variations = {2},
+                textures = {
+                    {0},
+                }
+            }
         },
-        textures = { -- the texture id's of the drawable for male clothing. 
-            0
-        }
-     },
-     female = {
-        variations = { -- the clothing variations for the chest radio animation for female
-            2
-        },
-        textures = { -- the texture id's of the drawable for female clothing.
-            0
-        }
-     },
+    },
     emote = "radio", -- emote to play
     emoteAiming = "radio2" -- Emote to play when aiming
 }
 
 config.earpieceAnim = { -- Ear Piece Animation
     enable = true, -- enable the ear piece radio animation
-    drawable = 9, -- the drawable (clothing type) for the ear piece
-    male = {
-        variations = { -- the clothing variations for the chest radio animation for male
-            3
+    drawables = {
+        {
+            drawable = 9, -- Drawable ID
+            male = {
+                variations = {1}, -- Clothing Variations
+                textures = {
+                    {0}, -- Clothing Variation texture IDs
+                }
+            },
+            female = {
+                variations = {1},
+                textures = {
+                    {0},
+                }
+            }
         },
-        textures = { -- the texture id's of the drawable for male clothing. 
-            0
-        }
-     },
-     female = {
-        variations = { -- the clothing variations for the chest radio animation for female
-            3
+    },
+
+    props = {
+        {
+            prop = 2, -- Prop ID
+            male = {
+                variations = {0}, -- Prop Variations (two numbers back in Vmenu ie. 2 = 0)
+                textures = {
+                    {0}, -- Prop Variation texture IDs
+                }
+            },
+            female = {
+                variations = {0},
+                textures = {
+                    {0},
+                }
+            }
         },
-        textures = { -- the texture id's of the drawable for female clothing.
-            0
-        }
-     },
+    },
     emote = "earpiece" -- Emote to play
 }
 
@@ -136,19 +154,26 @@ config.blacklistedClasses = { -- vehicle classes to blacklist
 
 
 --[[
-    List of drawable variations, though we recommend to keep them on either accessory, undershirt or torso.
-    0: Face 
-    1: Mask 
-    2: Hair 
-    3: Torso 
-    4: Leg 
-    5: Parachute / bag 
-    6: Shoes 
-    7: Accessory 
-    8: Undershirt 
-    9: Kevlar 
-    10: Badge 
+    List of drawable IDs, though we recommend to keep them on either accessory, undershirt or torso.
+    0: Face
+    1: Mask
+    2: Hair
+    3: Torso
+    4: Leg
+    5: Parachute / bag
+    6: Shoes
+    7: Accessory
+    8: Undershirt
+    9: Kevlar
+    10: Badge
     11: Torso 2
+
+    List of Prop IDs
+    0: Hats
+    1: Glasses
+    2: Ears
+    6: Watches
+    7: Bracelets
 ]]
 
 return config
